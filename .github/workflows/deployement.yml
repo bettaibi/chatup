@@ -21,7 +21,7 @@ jobs:
         run: npm install && npm run build
 
       - name: Deploy
-        uses: https://github.com/bettaibi/chatup
+        uses: bettaibi/chatup
         with: 
           branch: gh-pages
           folder: build
