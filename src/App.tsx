@@ -3,7 +3,7 @@ import React from 'react';
 function App() {
   return (
     <div>
-      Chatup
+      Chatup application is running
     </div>
   );
 }
