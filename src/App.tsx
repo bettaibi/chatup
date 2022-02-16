@@ -3,9 +3,9 @@ import React from 'react';
 function App() {
   return (
     <div>
-      <h6>
+      <h1>
         Chatup application is running
-      </h6>
+      </h1>
     </div>
   );
 }
