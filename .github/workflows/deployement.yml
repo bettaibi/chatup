@@ -21,7 +21,7 @@ jobs:
         run: npm install && npm run build
 
       - name: Deploy
-        uses: bettaibi/chatup@v1
+        uses: peaceiris/actions-gh-pages@v3
         with: 
           branch: gh-pages
           folder: build
