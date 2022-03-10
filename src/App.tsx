@@ -1,4 +1,5 @@
 import React from 'react';
+import { DatePicker, Button } from 'antd';
 
 function App() {
   return (
@@ -6,6 +7,8 @@ function App() {
       <h1>
         Chatup application is running
       </h1>
+      <DatePicker />
+      <Button type="primary" >Click</Button>
     </div>
   );
 }
