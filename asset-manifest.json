@@ -3,20 +3,20 @@
     "static/js/0.5be9811d.chunk.js": "/chatup/static/js/0.5be9811d.chunk.js",
     "static/js/0.5be9811d.chunk.js.map": "/chatup/static/js/0.5be9811d.chunk.js.map",
     "main.css": "/chatup/static/css/main.0eb3c763.chunk.css",
-    "main.js": "/chatup/static/js/main.5a23b5df.chunk.js",
-    "main.js.map": "/chatup/static/js/main.5a23b5df.chunk.js.map",
-    "runtime-main.js": "/chatup/static/js/runtime-main.7d2d3ab8.js",
-    "runtime-main.js.map": "/chatup/static/js/runtime-main.7d2d3ab8.js.map",
+    "main.js": "/chatup/static/js/main.26049023.chunk.js",
+    "main.js.map": "/chatup/static/js/main.26049023.chunk.js.map",
+    "runtime-main.js": "/chatup/static/js/runtime-main.d77c6f25.js",
+    "runtime-main.js.map": "/chatup/static/js/runtime-main.d77c6f25.js.map",
     "static/js/3.533dd03e.chunk.js": "/chatup/static/js/3.533dd03e.chunk.js",
     "static/js/3.533dd03e.chunk.js.map": "/chatup/static/js/3.533dd03e.chunk.js.map",
     "static/js/4.8120b892.chunk.js": "/chatup/static/js/4.8120b892.chunk.js",
     "static/js/4.8120b892.chunk.js.map": "/chatup/static/js/4.8120b892.chunk.js.map",
     "static/js/5.a92add20.chunk.js": "/chatup/static/js/5.a92add20.chunk.js",
     "static/js/5.a92add20.chunk.js.map": "/chatup/static/js/5.a92add20.chunk.js.map",
-    "static/js/6.82df6150.chunk.js": "/chatup/static/js/6.82df6150.chunk.js",
-    "static/js/6.82df6150.chunk.js.map": "/chatup/static/js/6.82df6150.chunk.js.map",
-    "static/js/7.96068c5c.chunk.js": "/chatup/static/js/7.96068c5c.chunk.js",
-    "static/js/7.96068c5c.chunk.js.map": "/chatup/static/js/7.96068c5c.chunk.js.map",
+    "static/js/6.397979dc.chunk.js": "/chatup/static/js/6.397979dc.chunk.js",
+    "static/js/6.397979dc.chunk.js.map": "/chatup/static/js/6.397979dc.chunk.js.map",
+    "static/js/7.7842ef10.chunk.js": "/chatup/static/js/7.7842ef10.chunk.js",
+    "static/js/7.7842ef10.chunk.js.map": "/chatup/static/js/7.7842ef10.chunk.js.map",
     "index.html": "/chatup/index.html",
     "service-worker.js": "/chatup/service-worker.js",
     "service-worker.js.map": "/chatup/service-worker.js.map",
@@ -25,9 +25,9 @@
     "static/js/3.533dd03e.chunk.js.LICENSE.txt": "/chatup/static/js/3.533dd03e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.7d2d3ab8.js",
+    "static/js/runtime-main.d77c6f25.js",
     "static/js/3.533dd03e.chunk.js",
     "static/css/main.0eb3c763.chunk.css",
-    "static/js/main.5a23b5df.chunk.js"
+    "static/js/main.26049023.chunk.js"
   ]
 }
