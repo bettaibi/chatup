@@ -25,18 +25,41 @@
 .glass__blur{
     background: rgba(255,255,255, .5);
     backdrop-filter: blur(5px);
-    border-radius: 18px;
     min-width: 300px;
-    padding: 1rem;
 }
 
-a.link{
+.c__radius{
+    border-radius: 18px;
+}
+
+a.link, span.link{
     font-size:.8125rem!important;
     &:hover{
         text-decoration: underline;
     }
 }
+span.link{
+    color: @primary-color;
+    cursor: pointer;
+}
 
 .p__16{
     padding: 1rem;
+}
+.m__0{
+    margin: 0 !important;
+}
+.mb__16{
+    margin-bottom: 1rem;
+}
+.mb__8{
+    margin-bottom: .5rem;
+}
+.container__sm{
+    @media (max-width: 576px){
+        width: 100%;
+    }
+    width: 540px;
+    padding: 1rem;
+    margin: 0 auto;
 }
