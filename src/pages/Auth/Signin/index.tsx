@@ -32,7 +32,7 @@ const Signin = () => {
           <div className="mb__16">
             <Title level={3} className="m__0">Sign in</Title>
             <Text>
-              Don't have an account? <Link to="/signup" className="link">Sign up</Link>
+              Don't have an account? <Link to="/chatup/signup" className="link">Sign up</Link>
             </Text>
           </div>
           <Form

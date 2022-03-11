@@ -39,7 +39,7 @@ const Signup = () => {
                     <div className="mb__16">
                         <Title level={3} className="m__0">Sign up</Title>
                         <Text>
-                          Already have an account? <Link to="/" className="link">Sign in</Link>
+                          Already have an account? <Link to="/chatup" className="link">Sign in</Link>
                         </Text>
                     </div>
                     <Form

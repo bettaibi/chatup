@@ -13,8 +13,8 @@ function App() {
     <BrowserRouter>
       <Suspense fallback={<span>Loading...</span>}>
         <Routes>
-          <Route path="/" element={<Signin />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/chatup" element={<Signin />} />
+          <Route path="/chatup/signup" element={<Signup />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
