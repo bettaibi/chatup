@@ -60,7 +60,7 @@ const Signup = () => {
                                 <Form.Item
                                     label="Email"
                                     name="email"
-                                    rules={[{ required: true, message: 'Please input your email!' }, { type: 'email', message: 'Invalid email!' }]}
+                                    rules={[{ required: true, message: 'Please input your E-mail!' }, { type: 'email', message: 'The input is not valid E-mail!' }]}
                                 >
                                     <Input type="email" />
                                 </Form.Item>
@@ -69,7 +69,7 @@ const Signup = () => {
                                     name="phone"
                                     rules={[{ required: true, message: 'Please input your phone!' }]}
                                 >
-                                    <Input type="email" />
+                                    <Input type="email" addonBefore="+216" />
                                 </Form.Item>
 
                                 <Row>
@@ -87,15 +87,26 @@ const Signup = () => {
                                     label="Password"
                                     name="password"
                                     rules={[{ required: true, message: 'Please input your password!' }, { min: 6, message: 'Too short!' }]}
-                                >
+                                    hasFeedback
+                               >
                                     <Input.Password />
                                 </Form.Item>
 
                                 <Form.Item
                                     label="Confirm Password"
                                     name="confirmPassword"
-                                    rules={[{ required: true, message: 'Please input your password!' }, { min: 6, message: 'Too short!' }]}
-                                >
+                                    rules={[{ required: true, message: 'Please input your password!' }, { min: 6, message: 'Too short!' }, 
+                                    ({ getFieldValue }) => ({
+                                        validator(_, value) {
+                                          if (!value || getFieldValue('password') === value) {
+                                            return Promise.resolve();
+                                          }
+                                          return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                                        },
+                                      }),]}
+                                    dependencies={['password']}
+                                    hasFeedback
+                              >
                                     <Input.Password />
                                 </Form.Item>
 

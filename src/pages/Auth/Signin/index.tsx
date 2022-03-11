@@ -33,7 +33,7 @@ const Signin = () => {
           <Form.Item
             label="Email"
             name="email"
-            rules={[{ required: true, message: 'Please input your email!'}, { type: 'email', message: 'Invalid email!'}]}
+            rules={[{ required: true, message: 'Please input your E-mail!'}, { type: 'email', message: 'The input is not valid E-mail!'}]}
           >
             <Input type="email" />
           </Form.Item>
