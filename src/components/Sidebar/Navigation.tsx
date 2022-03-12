@@ -1,6 +1,8 @@
 import React from 'react';
-import { HomeOutlined, SettingOutlined, NotificationOutlined, UserOutlined, WechatOutlined } from '@ant-design/icons';
-import clsx from 'clsx';
+import { HomeOutlined, SettingOutlined, NotificationOutlined, UserOutlined, MessageOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
+import { Tooltip } from 'antd';
+import { useParams } from 'react-router-dom';
 import "./sidebar.less";
 
 const navigations = [
@@ -8,40 +10,48 @@ const navigations = [
         icon: <HomeOutlined />,
         title: 'Home',
         path: '/chatup',
+        route: ''
     },
     {
         icon: <UserOutlined />,
         title: 'My Profile',
-        path: '/chatup',
+        path: '/chatup/profile',
+        route: 'profile'
     },
     {
-        icon: <WechatOutlined />,
+        icon: <MessageOutlined />,
         title: 'Messages',
-        path: '/chatup',
+        path: '/chatup/chat',
+        route: 'chat'
     },
     {
         icon: <NotificationOutlined />,
         title: 'Notifications',
-        path: '/chatup',
+        path: '/chatup/notifications',
+        route: 'notifications'
     },
     {
         icon: <SettingOutlined />,
         title: 'Settings',
-        path: '/chatup',
+        path: '/chatup/settings',
+        route: 'settings'
     }
 ];
 
-const Navigation = ({isCollapsed}: {isCollapsed: boolean}) => {
+const Navigation = () => {
+    const params = useParams();
+    const current = params['*'];
 
     return (
         <ul>
             {
                 navigations.map((item, index) => (
-                    <li className={index==0?'active':''} key={index}>
-                        <a href="#" className={clsx({'inline__links': !isCollapsed, 'block__links': isCollapsed})}>
-                            <span>{item.icon}</span>
-                            {!isCollapsed && <span>{item.title}</span>}
-                        </a>
+                    <li className={current === item.route ? 'active' : ''} key={index}>
+                        <Tooltip title={item.title}>
+                            <Link to={item.path} className="w__100">
+                                <span>{item.icon}</span>
+                            </Link>
+                        </Tooltip>
                     </li>
                 ))
             }

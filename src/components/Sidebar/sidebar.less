@@ -1,14 +1,14 @@
 
 ul{
-    margin-top: 3rem;
+    margin-top: 2rem;
     padding: 0;
     li{
         list-style: none;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.8rem;
         margin-bottom: 0.5rem;
         border-radius: 40px 0 0 40px;
         position: relative;
-        &.active, &:hover{
+        &.active{
             background-color: #fafafa;
             &::after{
                 content: '';
@@ -39,17 +39,10 @@ ul{
 
         a{
             display: flex;
-            gap: 0.8rem;
-            // color: @heading-color;
-            color: #0f172a;
+            color: @heading-color;
             font-weight: 500;
-           &.inline__links{
-            flex-direction: row;
-           }
-           &.block__links{
             flex-direction: column;
             align-items: center;
-           }
         }
     }
 }
