@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/UserLayout/Profile/index.tsx"],"names":["Profile"],"mappings":"mGAAA,uBASeA,UAPC,WAEZ,OACI","file":"static/js/13.da543733.chunk.js","sourcesContent":["import React from 'react'\r\n\r\nconst Profile = () => {\r\n\r\n    return (\r\n        <div>Profile Page</div>\r\n    )\r\n}\r\n\r\nexport default Profile"],"sourceRoot":""}
