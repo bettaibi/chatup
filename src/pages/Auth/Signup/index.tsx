@@ -21,6 +21,10 @@ const Signup = () => {
         console.log('Success:', values);
     };
 
+    const onFinishFailed = (errorInfo: any) => {
+        console.log('Failed:', errorInfo);
+    };
+
     function nextStep() {
         setCurrentStep(prev => prev + 1);
     }
@@ -39,7 +43,7 @@ const Signup = () => {
                     <div className="mb__16">
                         <Title level={3} className="m__0">Sign up</Title>
                         <Text>
-                          Already have an account? <Link to="/chatup" className="link">Sign in</Link>
+                          Already have an account? <Link to="/chatup/signin" className="link">Sign in</Link>
                         </Text>
                     </div>
                     <Form
@@ -47,8 +51,8 @@ const Signup = () => {
                         layout="vertical"
                         initialValues={initialValues}
                         onFinish={onFinish}
+                        onFinishFailed={onFinishFailed}
                         autoComplete="off"
-                        style={{ width: '100%' }}
                     >
 
                         <Steps size="small" current={currentStep} direction="horizontal">

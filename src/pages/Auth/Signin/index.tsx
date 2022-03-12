@@ -1,6 +1,5 @@
 import { Form, Input, Button, Checkbox, Divider, Row, Col, Typography } from 'antd';
 import { GoogleOutlined, createFromIconfontCN } from '@ant-design/icons';
-import useToggle from '../../../hooks/useToggle';
 import ForgotPasswordDialog from '../../../components/ForgotPasswordDialog';
 import {Link} from 'react-router-dom';
 
@@ -15,7 +14,6 @@ const initialValues = {
 };
 
 const Signin = () => {
-  const { show, handleOpen, handleClose} = useToggle();
 
   const onFinish = (values: any) => {
     console.log('Success:', values);
@@ -62,7 +60,7 @@ const Signin = () => {
 
             <div className='d__flex justify__content__between align__item__center' style={{ marginBottom: '1rem' }}>
               <Checkbox>Remember me</Checkbox>
-              <span onClick={handleOpen} className="link">Forgot password?</span>
+              <ForgotPasswordDialog />
             </div>
 
             <Form.Item>
@@ -87,7 +85,6 @@ const Signin = () => {
 
         </div>
       </div>
-      <ForgotPasswordDialog show={show} handleClose={handleClose} />
     </div>
   )
 }
