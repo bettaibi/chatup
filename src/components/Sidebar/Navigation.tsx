@@ -38,25 +38,35 @@ const navigations = [
     }
 ];
 
-const Navigation = () => {
-    const params = useParams();
-    const current = params['*'];
+const Navigations = () => {
+    console.log("navigations compoent");
 
     return (
         <ul>
             {
                 navigations.map((item, index) => (
-                    <li className={current === item.route ? 'active' : ''} key={index}>
-                        <Tooltip title={item.title}>
-                            <Link to={item.path} className="w__100">
-                                <span>{item.icon}</span>
-                            </Link>
-                        </Tooltip>
-                    </li>
+                    <Navigation key={index} item={item} />
                 ))
             }
         </ul>
     )
 }
 
-export default Navigation;
+const Navigation = ({ item }: { item: any }) => {
+    const params = useParams();
+    const current = params['*'];
+    console.log("nn****")
+    
+    return (
+        <li className={current === item.route ? 'active' : ''}>
+            <Tooltip title={item.title}>
+                <Link to={item.path} className="w__100">
+                    <span>{item.icon}</span>
+                </Link>
+            </Tooltip>
+        </li>
+    )
+}
+
+
+export default Navigations;
