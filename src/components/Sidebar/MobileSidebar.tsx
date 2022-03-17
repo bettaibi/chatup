@@ -1,19 +1,8 @@
 import React from 'react';
 import { motion, useMotionValue, useAnimation, useTransform } from 'framer-motion';
 
-const Initial = 190;
+const Initial = 192;
 
-const containerVariants = {
-    hidden: {
-        opacity: 0,
-        display: 'none'
-
-    },
-    visible: {
-        opacity: 1,
-        display: 'flex'
-    }
-}
 const spring = {
     type: "spring",
     damping: 10,
@@ -23,49 +12,48 @@ const spring = {
 const MobileSidebar = () => {
     const x = useMotionValue(Initial);
     const controls = useAnimation();
-    const input = [190, 0];
-    const output = [0, 1];
-    const zIndexOutput = [-2, 999999];
-    const opacity = useTransform(x, input, output);
-    const zIndex = useTransform(x, input, zIndexOutput);
+    const input = [Initial, 0];
+    const opacity = useTransform(x, input, [0, 1]);
+    const zIndex = useTransform(x, input, [-2, 88888]);
+    const backgroundColor = useTransform(x, input, ['#1DA57A', 'rgba(255, 255, 255, 0.6)']);
 
-    function panHandler(pointInfo: any){
+    function panHandler(pointInfo: any) {
 
-        if(pointInfo.offset.x < 0){
+        if (pointInfo.offset.x < 0) {
             const diff = Initial - Math.abs(pointInfo.offset.x);
-            if(x.get() <= 0){
+            if (x.get() <= 0) {
                 x.set(0);
-                return; 
+                return;
             }
-            else{
+            else {
                 x.set(diff)
             }
         }
-        if(pointInfo.offset.x > 0){
+        if (pointInfo.offset.x > 0) {
             const diff = pointInfo.offset.x - Initial;
-            
-            if(x.get() >= (Initial-10)){
+
+            if (x.get() >= (Initial - 10)) {
                 return;
             }
 
-            if(diff < 0){
+            if (diff < 0) {
                 x.set(Initial + diff);
                 return;
             }
 
-            if(diff > 0 && diff < Initial){
+            if (diff > 0 && diff < Initial) {
                 x.set(diff);
             }
         }
     }
 
-    function panEndHandler(pointInfo: any){
-        if(x.get() > 100){
+    function panEndHandler(pointInfo: any) {
+        if (x.get() > 100) {
             controls.start({
-                x: 190
+                x: Initial
             });
         }
-        else{
+        else {
             controls.start({
                 x: 0
             });
@@ -73,26 +61,29 @@ const MobileSidebar = () => {
     }
 
     return (
-        <motion.div className="mobile__sidebar bg__gredient"
-            style={{opacity, zIndex}}>
+        <React.Fragment>
+            <motion.div className="mobile__sidebar bg__gredient"
+                style={{ opacity, zIndex }}>
+            </motion.div>
 
-            <motion.div className='draggable' 
-             style={{ x }}
-             transition={{spring, duration: 0.8}}
-             animate={controls}
-            >
+            <motion.div className='draggable'
+                style={{ x }}
+                transition={{ spring, duration: 0.8 }}
+                animate={controls}>
+
                 <motion.div className="handler"
-                  whileTap={{scale: 1.12}}
-                  onPan={(e, pointInfo) => panHandler(pointInfo)}
-                  onPanEnd={(e, pointInfo) =>  panEndHandler(pointInfo)}></motion.div>
+                    style={{backgroundColor}}
+                    whileTap={{ scale: 1.12 }}
+                    onPan={(e, pointInfo) => panHandler(pointInfo)}
+                    onPanEnd={(e, pointInfo) => panEndHandler(pointInfo)}></motion.div>
 
                 <div className="mobile__sidebar__content">
                     fff
                 </div>
 
             </motion.div>
+        </React.Fragment>
 
-        </motion.div>
     )
 }
 

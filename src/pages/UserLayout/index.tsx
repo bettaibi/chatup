@@ -14,7 +14,7 @@ const UserLayout = () => {
     
     return (
         <div className="bg__gredient p__sm__16">
-            <Layout className="glass__blur responsive_layout d__flex flex__row">
+            <Layout className="glass__blur responsive_layout d__flex flex__row" style={{overflow: 'hidden'}}>
                 <Sidebar />
                 <Content className="main__content p__16">
                     {/* Something static here */}

@@ -58,36 +58,35 @@
     width: 100%;
     top: 0;
     left: 0;
-    display: flex;
-    justify-content: flex-end;
     overflow: hidden !important;
-
-    .draggable{
-        background: transparent;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem 1rem 1rem 0;
-        overflow: hidden;
-        width: 200px;
-        .handler{
-            height: 140px;
-            width: 10px;
-            border-radius: 18px;
-            background: rgba(255,255,255, .6);
-            backdrop-filter: blur(5px);
-            cursor: grab;
-            touch-action: none;
-            z-index: 99999;
-        }
-        .mobile__sidebar__content{
-            height: 90%;
-            background: rgba(255,255,255, .6);
-            backdrop-filter: blur(5px);
-            border-radius: 18px;
-            width: 140px;
-        }
+}
+.draggable{
+    position: absolute;
+    right: 0;
+    background: transparent;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem 1rem 0;
+    overflow: hidden;
+    z-index: 999999;
+    .handler{
+        height: 110px;
+        width: 8px;
+        border-radius: 20px;
+        background: rgba(255,255,255, .6);
+        backdrop-filter: blur(5px);
+        cursor: grab;
+        touch-action: none;
+    }
+    .mobile__sidebar__content{
+        height: 90%;
+        width: 100%;
+        background: rgba(255,255,255, .6);
+        backdrop-filter: blur(5px);
+        border-radius: 20px;
     }
 }
