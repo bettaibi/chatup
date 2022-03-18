@@ -1,0 +1,2 @@
+(this.webpackJsonpchatup=this.webpackJsonpchatup||[]).push([[15],{260:function(t,c,e){"use strict";e.r(c);e(0);var n=e(3);c.default=function(){return Object(n.jsx)("div",{children:"Settings page"})}}}]);
+//# sourceMappingURL=15.e20ff21d.chunk.js.map
