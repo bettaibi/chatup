@@ -4,7 +4,7 @@ import { LogoutOutlined } from '@ant-design/icons';
  
 import Navigations from './Navigation';
 import useBreakpoint from '../../hooks/useBreakpoint';
-import MobileSidebar from './MobileSidebar';
+import MobileSidebar from './mobile/MobileSidebar';
 
 const Sidebar = () => {
     const { breakpoint } = useBreakpoint();

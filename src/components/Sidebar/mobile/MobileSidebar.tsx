@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion, useMotionValue, useAnimation, useTransform } from 'framer-motion';
+import MobileSidebarContent from './MobileSidebarContent';
 
-const Initial = 190;
+const Initial = 170;
 
 const spring = {
     type: "spring",
@@ -87,7 +88,7 @@ const MobileSidebar = () => {
                     onPanEnd={(e, pointInfo) => panEndHandler(pointInfo)}></motion.div>
 
                 <div className="mobile__sidebar__content">
-                    fff
+                    <MobileSidebarContent />
                 </div>
 
             </motion.div>
