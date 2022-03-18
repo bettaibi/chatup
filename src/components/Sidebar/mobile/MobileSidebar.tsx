@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, useMotionValue, useAnimation, useTransform } from 'framer-motion';
 import MobileSidebarContent from './MobileSidebarContent';
 
-const Initial = 192;
+const Initial = 170;
 
 const spring = {
     type: "spring",
@@ -61,8 +61,8 @@ const MobileSidebar = () => {
         }
     }
 
-    function closeHandler(){
-        if(x.get()===0){
+    function closeHandler() {
+        if (x.get() === 0) {
             controls.start({
                 x: Initial
             });
@@ -73,19 +73,20 @@ const MobileSidebar = () => {
         <React.Fragment>
             <motion.div className="mobile__sidebar bg__gredient"
                 style={{ opacity, zIndex }}
-                onTap= {()=> closeHandler()}>
-            </motion.div>
+                onTap={() => closeHandler()} />
 
             <motion.div className='draggable'
                 style={{ x }}
                 transition={{ spring, duration: 0.44 }}
                 animate={controls}>
 
-                <motion.div className="handler"
-                    style={{backgroundColor}}
-                    whileTap={{ scale: 1.12 }}
-                    onPan={(e, pointInfo) => panHandler(e, pointInfo)}
-                    onPanEnd={(e, pointInfo) => panEndHandler(pointInfo)}></motion.div>
+                <motion.div className="handler__container"
+                whileTap={{ scale: 1.12 }}
+                onPan={(e, pointInfo) => panHandler(e, pointInfo)}
+                onPanEnd={(e, pointInfo) => panEndHandler(pointInfo)}>
+                    <motion.div className="handler"
+                        style={{ backgroundColor }} />
+                </motion.div>
 
                 <div className="mobile__sidebar__content">
                     <MobileSidebarContent />

@@ -61,7 +61,7 @@
     overflow: hidden !important;
 }
 .draggable{
-    position: absolute;
+    position: fixed;
     right: 0;
     background: transparent;
     height: 100%;
@@ -73,15 +73,24 @@
     padding: 1rem 1rem 1rem 0;
     overflow: hidden;
     z-index: 999999;
-    .handler{
-        height: 140px;
-        width: 15px;
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-        background: rgba(255,255,255, .6);
-        backdrop-filter: blur(5px);
+    .handler__container{
+        height: 180px;
+        background-color: transparent;
+        width: 40px;
+        display: flex;
+        justify-content: flex-end;
         touch-action: none;
+        cursor: grab;
+        .handler{
+            height: 100%;
+            width: 10px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            background: rgba(255,255,255, .6);
+            backdrop-filter: blur(5px);
+        }
     }
+
     .mobile__sidebar__content{
         height: 90%;
         width: 100%;
