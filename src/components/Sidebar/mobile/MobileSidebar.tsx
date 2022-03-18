@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, useMotionValue, useAnimation, useTransform } from 'framer-motion';
 import MobileSidebarContent from './MobileSidebarContent';
 
-const Initial = 170;
+const Initial = 192;
 
 const spring = {
     type: "spring",
@@ -78,10 +78,14 @@ const MobileSidebar = () => {
 
             <motion.div className='draggable'
                 style={{ x }}
-                transition={{ spring, duration: 0.8 }}
+                transition={{ spring, duration: 0.44 }}
                 animate={controls}>
 
                 <motion.div className="handler"
+                    drag="y"
+                    dragConstraints={{ top: -150, bottom: 150 }}
+                    dragElastic={0.2}
+                    dragMomentum={false}
                     style={{backgroundColor}}
                     whileTap={{ scale: 1.12 }}
                     onPan={(e, pointInfo) => panHandler(e, pointInfo)}
