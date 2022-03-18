@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Tooltip } from 'antd';
-import { LogoutOutlined } from '@ant-design/icons';
- 
+import { Avatar, Tooltip } from 'antd';
+import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
+
 import Navigations from './Navigation';
 import useBreakpoint from '../../hooks/useBreakpoint';
 import MobileSidebar from './mobile/MobileSidebar';
@@ -13,26 +13,29 @@ const Sidebar = () => {
 
     return (
         <>
-           { (breakpoint === 'md' || breakpoint ==="lg") ?
-            <div className="sidebar" style={{ backgroundColor: 'transparent', width: '80px' }}>
+            {(breakpoint === 'md' || breakpoint === 'lg') ?
+                <div className="sidebar d__flex flex__column justify__content__around h__100" style={{ backgroundColor: 'transparent', width: '80px' }}>
 
-                <div className="d__flex flex__column justify__content__between h__100">
-                    <div style={{ marginTop: '0.4rem' }}>
-                        <div className="mb__16 d__flex flex__column align__item__center">
-                            <img src="/chatup/img/58.png" alt="chatup_logo" />
-                        </div>
-                        <Navigations />
+
+                    <div className="d__flex align__item__center justify__content__center ">
+                         <img src="./img/50.png" alt="app_logo" />
                     </div>
 
-                    <div className="mb__16 d__flex flex__column align__item__center">
+                    <Navigations />
+
+
+                    <div className="d__flex flex__column align__item__center w__100" style={{ marginRight: '3px' }}>
                         <Tooltip title="Sign out">
-                            <Button type="primary" shape="circle" icon={<LogoutOutlined />} size="large" />
+                            <a role="button" className="shadow__sm signout__btn">
+                                <span>
+                                    <LogoutOutlined />
+                                </span>
+                            </a>
                         </Tooltip>
                     </div>
-                </div>
 
-            </div>:
-            <MobileSidebar /> 
+                </div> :
+                <MobileSidebar />
             }
         </>
     )

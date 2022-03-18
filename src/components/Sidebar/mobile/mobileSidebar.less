@@ -1,0 +1,87 @@
+.mobile__sidebar {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden !important;
+}
+.draggable{
+    position: fixed;
+    right: 0;
+    background: transparent;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem 1rem 0;
+    overflow: hidden;
+    z-index: 999999;
+    .handler__container{
+        height: 180px;
+        background-color: transparent;
+        width: 40px;
+        display: flex;
+        justify-content: flex-end;
+        touch-action: none;
+        cursor: grab;
+        .handler{
+            height: 100%;
+            width: 10px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            background: rgba(255,255,255, .6);
+            backdrop-filter: blur(5px);
+        }
+    }
+
+    .mobile__sidebar__content{
+        height: 90%;
+        width: 100%;
+        background: rgba(255,255,255, .6);
+        backdrop-filter: blur(5px);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0.5rem 0;
+        ul{
+            padding: 0;
+            list-style: none;
+            margin: 0 !important;
+            li{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 0.5rem;
+                &:last-child{
+                    margin: 0;
+                }
+                h5{
+                    margin: 0.2rem 0 0 0 !important;
+                }
+                a{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #dbdbdb;
+                    height: 38px;
+                    width: 45px;
+                    border-radius: 80px;
+                    transition: background-color 0.5s, color 0.5s;
+                    &.active{
+                        background-color: @primary-color;
+                        color: #fafafa;
+                    }
+                }
+                span.icon{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

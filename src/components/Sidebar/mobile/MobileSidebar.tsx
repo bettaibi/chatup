@@ -2,13 +2,15 @@ import React from 'react';
 import { motion, useMotionValue, useAnimation, useTransform } from 'framer-motion';
 import MobileSidebarContent from './MobileSidebarContent';
 
-const Initial = 170;
+import "./mobileSidebar.less";
+
+const Initial = 174;
 
 const spring = {
     type: "spring",
     damping: 10,
     stiffness: 100
-}
+};
 
 const MobileSidebar = () => {
     const x = useMotionValue(Initial);
@@ -61,13 +63,13 @@ const MobileSidebar = () => {
         }
     }
 
-    function closeHandler() {
+    const closeHandler = React.useCallback(() => {
         if (x.get() === 0) {
             controls.start({
                 x: Initial
             });
         }
-    }
+    }, []);
 
     return (
         <React.Fragment>
@@ -77,7 +79,7 @@ const MobileSidebar = () => {
 
             <motion.div className='draggable'
                 style={{ x }}
-                transition={{ spring, duration: 0.44 }}
+                transition={{ spring, duration: 0.5 }}
                 animate={controls}>
 
                 <motion.div className="handler__container"
@@ -89,7 +91,7 @@ const MobileSidebar = () => {
                 </motion.div>
 
                 <div className="mobile__sidebar__content">
-                    <MobileSidebarContent />
+                    <MobileSidebarContent closeHandler={closeHandler} />
                 </div>
 
             </motion.div>
