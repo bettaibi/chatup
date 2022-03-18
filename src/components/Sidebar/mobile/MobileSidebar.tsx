@@ -82,10 +82,6 @@ const MobileSidebar = () => {
                 animate={controls}>
 
                 <motion.div className="handler"
-                    drag="y"
-                    dragConstraints={{ top: -150, bottom: 150 }}
-                    dragElastic={0.2}
-                    dragMomentum={false}
                     style={{backgroundColor}}
                     whileTap={{ scale: 1.12 }}
                     onPan={(e, pointInfo) => panHandler(e, pointInfo)}
