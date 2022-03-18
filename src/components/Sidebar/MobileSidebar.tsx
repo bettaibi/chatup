@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useMotionValue, useAnimation, useTransform } from 'framer-motion';
 
-const Initial = 192;
+const Initial = 190;
 
 const spring = {
     type: "spring",
@@ -17,8 +17,8 @@ const MobileSidebar = () => {
     const zIndex = useTransform(x, input, [-2, 88888]);
     const backgroundColor = useTransform(x, input, ['#1DA57A', 'rgba(255, 255, 255, 0.6)']);
 
-    function panHandler(pointInfo: any) {
-
+    function panHandler(e: any, pointInfo: any) {
+        e.stopPropagation();
         if (pointInfo.offset.x < 0) {
             const diff = Initial - Math.abs(pointInfo.offset.x);
             if (x.get() <= 0) {
@@ -60,10 +60,19 @@ const MobileSidebar = () => {
         }
     }
 
+    function closeHandler(){
+        if(x.get()===0){
+            controls.start({
+                x: Initial
+            });
+        }
+    }
+
     return (
         <React.Fragment>
             <motion.div className="mobile__sidebar bg__gredient"
-                style={{ opacity, zIndex }}>
+                style={{ opacity, zIndex }}
+                onTap= {()=> closeHandler()}>
             </motion.div>
 
             <motion.div className='draggable'
@@ -74,7 +83,7 @@ const MobileSidebar = () => {
                 <motion.div className="handler"
                     style={{backgroundColor}}
                     whileTap={{ scale: 1.12 }}
-                    onPan={(e, pointInfo) => panHandler(pointInfo)}
+                    onPan={(e, pointInfo) => panHandler(e, pointInfo)}
                     onPanEnd={(e, pointInfo) => panEndHandler(pointInfo)}></motion.div>
 
                 <div className="mobile__sidebar__content">
