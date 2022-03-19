@@ -18,7 +18,7 @@ const Sidebar = () => {
 
 
                     <div className="d__flex align__item__center justify__content__center ">
-                         <img src="./img/50.png" alt="app_logo" />
+                         <img src="./img/57.png" alt="app_logo" />
                     </div>
 
                     <Navigations />
