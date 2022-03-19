@@ -1,29 +1,13 @@
 import { 
-    HomeOutlined, 
+    AliwangwangOutlined, 
     SettingOutlined, 
     WhatsAppOutlined, 
     NotificationOutlined, 
     UserOutlined, 
-    MessageOutlined,
-    createFromIconfontCN
+    MessageOutlined
 } from '@ant-design/icons';
 
-const IconFont = createFromIconfontCN({
-    scriptUrl: [
-        '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
-        '//at.alicdn.com/t/font_1788592_a5xf2bdic3u.js',
-        '//at.alicdn.com/t/font_1788044_0dwu4guekcwr.js'
-    ],
-    
-});
-
 export const navigations = [
-    {
-        icon: <HomeOutlined />,
-        title: 'Home',
-        path: '/chatup',
-        route: ''
-    },
     {
         icon: <UserOutlined />,
         title: 'My Profile',
@@ -32,15 +16,21 @@ export const navigations = [
     },
     {
         icon: <MessageOutlined />,
-        title: 'Messages',
-        path: '/chatup/chat',
-        route: 'chat'
+        title: 'Conversations',
+        path: '/chatup',
+        route: ''
     },
     {
         icon: <WhatsAppOutlined />,
         title: 'Calls History',
         path: '/chatup/calls',
         route: 'calls'
+    },
+    {
+        icon: <AliwangwangOutlined />,
+        title: 'Shorts',
+        path: '/chatup/shorts',
+        route: 'shorts'
     },
     {
         icon: <NotificationOutlined />,
@@ -55,5 +45,3 @@ export const navigations = [
         route: 'settings'
     },
 ];
-
-{/* <AliwangwangOutlined /> */}

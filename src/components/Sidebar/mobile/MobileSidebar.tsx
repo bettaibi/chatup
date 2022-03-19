@@ -90,7 +90,7 @@ const MobileSidebar = () => {
                         style={{ backgroundColor }} />
                 </motion.div>
 
-                <div className="mobile__sidebar__content">
+                <div className="mobile__sidebar__content scrollabe">
                     <MobileSidebarContent closeHandler={closeHandler} />
                 </div>
 
