@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/UserLayout/Chat/index.tsx"],"names":["Chat"],"mappings":"mGAAA,uBAQeA,UANF,WACX,OACE","file":"static/js/11.8b7b3485.chunk.js","sourcesContent":["import React from 'react'\r\n\r\nconst Chat = () => {\r\n  return (\r\n    <div>Chat page</div>\r\n  )\r\n}\r\n\r\nexport default Chat"],"sourceRoot":""}
