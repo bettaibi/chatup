@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Button, Row, Col, Typography } from 'antd';
+import { Form, Input, Button, Row, Col } from 'antd';
 
 const initialValues = {
     username: '',

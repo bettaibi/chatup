@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, Space, Button } from 'antd';
+import { Drawer, Button } from 'antd';
 import useToggle from '../../../hooks/useToggle';
 import Cropper from "react-cropper";
 
@@ -62,17 +62,24 @@ const CropperModal = ({ file }: { file: any }) => {
             onClose={handleClose}
             getContainer={false}
             style={{ position: 'absolute' }}
+            bodyStyle={{padding: 0, overflowY: 'hidden'}}
             destroyOnClose={true}
             mask={false}
             maskClosable={false}
         >
-            <div className="d__flex align__item_center p__16" style={{ justifyContent: 'flex-end' }}>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button onClick={handleOk} type="primary">
-                    Save
-                </Button>
+            <div className="d__flex flex__column h__100">
+                <div className="p__16" 
+                style={{ position: 'absolute', right: '1rem', backgroundColor: 'transparent', zIndex: 999999}}>
+                    <Button onClick={handleClose} size="small" shape="round" style={{marginRight: '0.5rem'}}>Cancel</Button>
+                    <Button onClick={handleOk} shape="round" type='primary' size="small">
+                        Save
+                    </Button>
+                </div>
+                <div style={{ position: 'relative', flex: 1, width: '100%'}}>
+                    <CropComponent file={file} />
+                </div>
             </div>
-            <CropComponent file={file} />
+           
         </Drawer>
     )
 };
@@ -88,7 +95,7 @@ const CropComponent = ({ file }: { file: string }) => {
 
     return (
         <Cropper
-            style={{ position: 'absolute', top: '0', left: 0, height: '100%', width: '100%' }}
+            style={{ position: 'absolute', top: 0, left: 0, height: '100%', width: '100%' }}
             aspectRatio={4 / 3}
             preview=".img-preview"
             guides={false}
