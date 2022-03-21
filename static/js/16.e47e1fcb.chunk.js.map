@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/UserLayout/Shorts/index.tsx"],"names":["Shorts"],"mappings":"mGAAA,uBAQeA,UANA,WACb,OACE","file":"static/js/16.e47e1fcb.chunk.js","sourcesContent":["import React from 'react'\r\n\r\nconst Shorts = () => {\r\n  return (\r\n    <div>Shorts Page</div>\r\n  )\r\n}\r\n\r\nexport default Shorts;"],"sourceRoot":""}
