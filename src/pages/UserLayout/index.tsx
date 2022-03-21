@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Layout } from 'antd';
-import Sidebar from '../../components/Sidebar';
 import { Route, Routes } from 'react-router-dom';
+import Sidebar from '../../components/Sidebar';
 
 const Shorts = lazy(() => import('./Shorts'));
 const Settings = lazy(() => import('./Settings'));
@@ -13,12 +13,12 @@ const Calls = lazy(() => import('./Calls'));
 const { Content } = Layout;
 
 const UserLayout = () => {
-    
+
     return (
-        <div className="bg__gredient p__sm__16">
-            <Layout className="glass__blur responsive_layout d__flex flex__row" style={{overflow: 'hidden'}}>
-                <Sidebar />
-                <Content className="main__content p__16">
+        <div className="bg__gredient p__sm__16 d__flex flex__row" style={{gap: '1rem', minHeight: '100vh'}}>
+            <Sidebar />
+
+            <Content className="main__content scrollabe">
                     {/* Something static here */}
                     <Suspense fallback={<span>inner loading...</span>}>
                         <Routes>
@@ -30,8 +30,7 @@ const UserLayout = () => {
                             <Route path="/calls" element={<Calls />} />
                         </Routes>
                     </Suspense>
-                </Content>
-            </Layout>
+            </Content>
         </div>
     )
 }

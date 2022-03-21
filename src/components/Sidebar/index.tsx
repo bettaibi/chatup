@@ -1,6 +1,6 @@
 import React from 'react';
-import { Avatar, Tooltip } from 'antd';
-import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
+import { Tooltip } from 'antd';
+import { LogoutOutlined } from '@ant-design/icons';
 
 import Navigations from './Navigation';
 import useBreakpoint from '../../hooks/useBreakpoint';
@@ -9,17 +9,10 @@ import MobileSidebar from './mobile/MobileSidebar';
 const Sidebar = () => {
     const { breakpoint } = useBreakpoint();
 
-    console.log("sidebar compoent")
-
     return (
         <>
             {(breakpoint === 'md' || breakpoint === 'lg') ?
-                <div className="sidebar scrollabe d__flex flex__column justify__content__around h__100" style={{ backgroundColor: 'transparent', width: '80px' }}>
-
-
-                    <div className="d__flex align__item__center justify__content__center ">
-                         <img src="./chatup/img/57.png" alt="app_logo" />
-                    </div>
+                <div className="sidebar scrollabe d__flex flex__column align__item__center">
 
                     <Navigations />
 

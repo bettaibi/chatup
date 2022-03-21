@@ -23,17 +23,12 @@
 .main__content{
     @media (max-width: @smWidth){
        border-radius: 0;
+       min-height: 100vh;
+       height: 100%;
     }
     background-color: #fafafa; // bg content variable
     border-radius: 18px;
-}
-.responsive_layout{
-    @media (max-width: @smWidth){
-        padding: 0;
-        border-radius: 0;
-        min-height: 100vh;
-    }
-    padding: 1rem;
-    border-radius: 18px;
     height: calc(100vh - 2rem);
+    overflow-y: auto;
+    flex: 1;
 }

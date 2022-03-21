@@ -8,7 +8,7 @@ import "./sidebar.less";
 const Navigations = () => {
 
     return (
-        <ul>
+        <ul style={{flex:1}}>
             {
                 navigations.map((item, index) => (
                     <Navigation key={index} item={item} />
@@ -25,9 +25,9 @@ const Navigation = ({ item }: { item: any }) => {
     const isActive = current === item.route;
 
     return (
-        <li className={`${isActive ? 'active': ''}`}>
+        <li>
             <Tooltip title={item.title}>
-                <Link to={item.path} className="shadow__sm">
+                <Link to={item.path} className={`${isActive ? 'shadow__sm active': ''}`}>
                     <span>{item.icon}</span>
                 </Link>
             </Tooltip>
