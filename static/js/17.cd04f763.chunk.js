@@ -1,0 +1,2 @@
+(this.webpackJsonpchatup=this.webpackJsonpchatup||[]).push([[17],{266:function(t,c,s){"use strict";s.r(c);s(0);var e=s(3);c.default=function(){return Object(e.jsx)("div",{children:"Shorts Page"})}}}]);
+//# sourceMappingURL=17.cd04f763.chunk.js.map
