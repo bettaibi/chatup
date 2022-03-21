@@ -24,7 +24,7 @@ const About = () => {
                 autoComplete="off"
                 style={{ width: '100%' }}
             >
-                <div className="p__16">
+                <div className="p__16" style={{ marginBottom: '64px'}}>
                     <Row gutter={[16, 0]}>
                         <Col span={12}>
                             <Form.Item
@@ -80,7 +80,8 @@ const About = () => {
                 </div>
 
 
-                <div className="p__16 bg__lighten__green" style={{textAlign: 'right' }}>
+                <div className="bg__lighten__green bottom__footer d__flex align__item__center p__16"
+                style={{justifyContent: 'flex-end'}}>
 
                     <Button type="primary" htmlType="submit" shape="round" size="large">
                        Save

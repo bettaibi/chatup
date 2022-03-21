@@ -14,7 +14,7 @@ const Profile = () => {
     
     return (
         <React.Fragment>
-            <div className="bg__white shadow__sm w__100 content__top__radius content__top__radius" id="profile">
+            <div className="bg__white shadow__sm w__100 content__top__radius content__top__radius no__sm__radius" id="profile">
                 <div className="bg__cover" style={{ backgroundImage: `url(${Background})` }} />
                 <ProfileAvatar />
 
@@ -34,7 +34,7 @@ const Profile = () => {
                 </div>
 
                 <Tabs defaultActiveKey="1" centered>
-                    <TabPane tab="About" key="1" style={{padding : 0}}>
+                    <TabPane tab="About" key="1">
                         <About />
                     </TabPane>
                     <TabPane tab="Followers" key="2">

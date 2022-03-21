@@ -1,5 +1,5 @@
-import React, { ChangeEvent, } from 'react';
-import { Modal } from 'antd';
+import React from 'react';
+import { Drawer, Space, Button } from 'antd';
 import useToggle from '../../../hooks/useToggle';
 import Cropper from "react-cropper";
 
@@ -18,13 +18,13 @@ const ProfileAvatar = () => {
         e.preventDefault();
         let files;
         if (e.dataTransfer) {
-          files = e.dataTransfer.files;
+            files = e.dataTransfer.files;
         } else if (e.target) {
-          files = e.target.files;
+            files = e.target.files;
         }
         const reader = new FileReader();
         reader.onload = () => {
-          setSelectedFile(reader.result as any);
+            setSelectedFile(reader.result as any);
         };
         reader.readAsDataURL(files[0]);
     }
@@ -53,20 +53,31 @@ const CropperModal = ({ file }: { file: any }) => {
     function handleOk() {
         console.log("clicked")
     }
-    console.log("rerender")
 
     return (
-        <Modal visible={show} onOk={handleOk}
-            onCancel={handleClose} mask={false} maskClosable={false} okText="Save"
-            closable={false} bodyStyle={{ padding: '0', position: 'relative', minHeight: '300px', minWidth: '300px' }}>
-
-            <CropComponent file = {file} />
-
-        </Modal>
-    );
+        <Drawer
+            placement="right"
+            visible={show}
+            closable={false}
+            onClose={handleClose}
+            getContainer={false}
+            style={{ position: 'absolute' }}
+            destroyOnClose={true}
+            mask={false}
+            maskClosable={false}
+        >
+            <div className="d__flex align__item_center p__16" style={{ justifyContent: 'flex-end' }}>
+                <Button onClick={handleClose}>Cancel</Button>
+                <Button onClick={handleOk} type="primary">
+                    Save
+                </Button>
+            </div>
+            <CropComponent file={file} />
+        </Drawer>
+    )
 };
 
-const CropComponent = React.memo(({file}:{file: string}) => {
+const CropComponent = ({ file }: { file: string }) => {
     const cropperRef = React.useRef<HTMLImageElement>(null);
 
     const onCrop = () => {
@@ -77,7 +88,7 @@ const CropComponent = React.memo(({file}:{file: string}) => {
 
     return (
         <Cropper
-            style={{position:'absolute', top:'0', left:0, height: '100%', width: '100%' }}
+            style={{ position: 'absolute', top: '0', left: 0, height: '100%', width: '100%' }}
             aspectRatio={4 / 3}
             preview=".img-preview"
             guides={false}
@@ -89,6 +100,6 @@ const CropComponent = React.memo(({file}:{file: string}) => {
             cropBoxMovable={false}
         />
     )
-})
+}
 
 export default ProfileAvatar;
