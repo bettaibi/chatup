@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-const useToggle = () => {
-    const [show, setShow] = useState<boolean>(false);
+const useToggle = (initial?: boolean) => {
+    const [show, setShow] = useState<boolean>(initial || false);
 
     function handleOpen() {
         setShow(true);

@@ -11,6 +11,7 @@ const Background = "/chatup/img/cover.jpg";
 
 const Profile = () => {
     console.log("profile component")
+    
     return (
         <React.Fragment>
             <div className="bg__white shadow__sm w__100 content__top__radius content__top__radius" id="profile">
