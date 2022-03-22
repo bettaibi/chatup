@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/UserLayout/Calls/index.tsx"],"names":["Calls"],"mappings":"mGAAA,uBAWeA,UATD,WAEV,OACI","file":"static/js/13.6f3df580.chunk.js","sourcesContent":["import React from 'react';\r\n\r\nconst Calls = () => {\r\n\r\n    return (\r\n        <div>\r\n            Calls Page\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default Calls;"],"sourceRoot":""}

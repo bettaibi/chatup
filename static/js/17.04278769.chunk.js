@@ -1,0 +1,2 @@
+(this.webpackJsonpchatup=this.webpackJsonpchatup||[]).push([[17],{283:function(t,c,a){"use strict";a.r(c);a(0);var e=a(3);c.default=function(){return Object(e.jsx)("div",{children:"Chat page"})}}}]);
+//# sourceMappingURL=17.04278769.chunk.js.map

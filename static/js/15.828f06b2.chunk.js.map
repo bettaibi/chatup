@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/UserLayout/Notifications/index.tsx"],"names":["Notifications"],"mappings":"mGAAA,uBAQeA,UANO,WACpB,OACE","file":"static/js/15.828f06b2.chunk.js","sourcesContent":["import React from 'react'\r\n\r\nconst Notifications = () => {\r\n  return (\r\n    <div>Notifications Page</div>\r\n  )\r\n}\r\n\r\nexport default Notifications"],"sourceRoot":""}

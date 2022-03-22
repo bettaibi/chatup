@@ -1,0 +1,2 @@
+#profile{position:relative;min-height:100vh;height:auto}#profile .bg__cover{width:100%;height:160px;background-size:cover;background-attachment:fixed}#profile .profile__avatar{width:128px;height:128px;border-radius:50%;border:4px solid #fff;overflow:hidden;position:absolute;top:60px;-webkit-transform:translateX(-50%);transform:translateX(-50%);left:50%;cursor:pointer}#profile .profile__avatar img{width:100%;height:100%;object-fit:cover}#profile .user__details{margin:2rem 0 1rem;text-align:center}
+/*# sourceMappingURL=12.667745d5.chunk.css.map */
