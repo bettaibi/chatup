@@ -14,6 +14,7 @@ const About = () => {
     const onFinish = (values: any) => {
         console.log('Success:', values);
     };
+    
     return (
         <div>
             <Form

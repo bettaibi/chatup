@@ -70,8 +70,8 @@ const CropperModal = ({ file }: { file: any }) => {
             <div className="d__flex flex__column h__100">
                 <div className="p__16" 
                 style={{ position: 'absolute', right: '1rem', backgroundColor: 'transparent', zIndex: 999999}}>
-                    <Button onClick={handleClose} size="small" shape="round" style={{marginRight: '0.5rem'}}>Cancel</Button>
-                    <Button onClick={handleOk} shape="round" type='primary' size="small">
+                    <Button onClick={handleClose} shape="round" style={{marginRight: '0.5rem'}}>Cancel</Button>
+                    <Button onClick={handleOk} shape="round" type='primary'>
                         Save
                     </Button>
                 </div>

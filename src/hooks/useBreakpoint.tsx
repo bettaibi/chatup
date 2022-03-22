@@ -1,8 +1,10 @@
 import React from 'react';
 import throttle from 'lodash.throttle';
 
+type Breakpoints = 'xs' | 'sm' | 'md' | 'lg' | '';
+
 function useBreakpoint() {
-    const [breakpoint, setBreakpoint] = React.useState<string>('');
+    const [breakpoint, setBreakpoint] = React.useState<Breakpoints>('');
 
     React.useEffect(() => {
         window.addEventListener('resize', computeInnerWidth);
@@ -14,12 +16,12 @@ function useBreakpoint() {
 
     React.useEffect(() => {
         const bk = getDeviceConfig(window.innerWidth);
-        setBreakpoint(bk);
+        setBreakpoint(bk as Breakpoints);
     }, []);
 
     const computeInnerWidth = throttle(function () {
         const bk = getDeviceConfig(window.innerWidth);
-        setBreakpoint(bk);
+        setBreakpoint(bk as Breakpoints);
     }, 200);
 
     function getDeviceConfig(width: number): string {

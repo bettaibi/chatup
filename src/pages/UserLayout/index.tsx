@@ -18,7 +18,7 @@ const UserLayout = () => {
         <div className="bg__gredient p__sm__16 d__flex flex__row" style={{gap: '1rem', minHeight: '100vh'}}>
             <Sidebar />
 
-            <Content className="main__content scrollabe">
+            <Content className="main__content scrollabe bg__white">
                     {/* Something static here */}
                     <Suspense fallback={<span>inner loading...</span>}>
                         <Routes>
