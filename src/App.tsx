@@ -1,23 +1,22 @@
-import {lazy, Suspense} from 'react';
+import { lazy, Suspense } from 'react';
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
-// App Routes
-const Signin = lazy(()=> import('./pages/Auth/Signin'));
-const Signup = lazy(()=> import('./pages/Auth/Signup'));
-const UserLayout = lazy(()=> import('./pages/UserLayout'));
+
+// APP ROUTES
+const Signin = lazy(() => import('./pages/Auth/Signin/Signin'));
 
 function App() {
   return (
     <BrowserRouter>
       <Suspense fallback={<span>Loading...</span>}>
         <Routes>
-          <Route path="/chatup/*" element={<UserLayout/>} />
+          {/* <Route path="/chatup/*" element={<UserLayout/>} /> */}
 
           <Route path="/chatup/signin" element={<Signin />} />
-          <Route path="/chatup/signup" element={<Signup />} />
+          {/* <Route path="/chatup/signup" element={<Signup />} /> */}
         </Routes>
       </Suspense>
     </BrowserRouter>

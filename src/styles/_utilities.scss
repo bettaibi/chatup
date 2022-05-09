@@ -1,0 +1,50 @@
+// #0f172a, #94a0b1
+
+.bg__gradient{
+    min-height: 100vh;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, #96fffc,#d680f0, #dda8ed, #f5a7f5, rgb(255, 213, 136));
+}
+
+.glass__blur{
+    background: rgba(255,255,255, .5);
+    backdrop-filter: blur(5px);
+    min-width: 280px;
+}
+
+.b__radius{
+    border-radius: 18px;
+}
+a{
+    text-decoration: none;
+}
+a.link, span.link{
+    font-size:.8125rem!important;
+    &:hover{
+        text-decoration: underline;
+        color: #1DA57A;
+    }
+}
+span.link{
+    cursor: pointer;
+}
+
+.shadow__sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+.bg__white{
+    background-color: #fff;
+}
+.bg__lighten__green{
+    background-color: #f0fdf4;
+    // background-color: #f8fafc;
+}
+
+// .sm__container{
+//     @media (max-width: 576px){
+//         width: 100%;
+//     }
+//     width: 540px;
+//     padding: 1rem;
+//     margin: 0 auto;
+// }

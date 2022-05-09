@@ -1,14 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.less';
-import App from './App';
+import * as ReactDOM from 'react-dom/client';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import App from './App';
+import { ThemeProvider } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
+import {theme} from './services/customTheme';
 
-ReactDOM.render(
-  <React.Fragment>
+import './index.scss';
+
+const rootNode = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+
+rootNode.render(
+  <React.StrictMode>
+    <CssBaseline />
+    <ThemeProvider theme={theme}>
     <App />
-  </React.Fragment>,
-  document.getElementById('root')
+    </ThemeProvider>
+  </React.StrictMode>
 );
 
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://cra.link/PWA
 serviceWorkerRegistration.register();
