@@ -1,2 +1,0 @@
-# chatup
-React chat application
