@@ -27,7 +27,7 @@ const schema = Yup.object().shape({
 
 const SignInForm = () => {
 
-    const onHandleSubmit = (values: SignInModel, resetForm: ()=> void) => {
+    const onHandleSubmit = (values: SignInModel, resetForm: () => void) => {
         console.log(values)
         resetForm();
     }
@@ -36,7 +36,7 @@ const SignInForm = () => {
         <Formik
             initialValues={initialValues}
             validationSchema={schema}
-            onSubmit={(values, {resetForm})=> onHandleSubmit(values, resetForm)}
+            onSubmit={(values, { resetForm }) => onHandleSubmit(values, resetForm)}
         >
             {
                 ({ handleBlur, handleSubmit, handleChange, values, errors, touched }) => (
@@ -45,34 +45,23 @@ const SignInForm = () => {
                         autoComplete='off'
                     >
                         <Box mb={1.8}>
-                            <Typography variant='body1' sx={{ marginBottom: '0.3rem' }}>Email</Typography>
-                            <TextField
+                            <InputField placeholder="Please input your E-mail!" id="email"
                                 fullWidth
-                                hiddenLabel
-                                id="email"
                                 type="email"
-                                placeholder="Please input your E-mail!"
                                 name="email"
-                                variant="standard"
-                                size="small"
                                 value={values.email}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                error={!!errors.email && touched.email}
+                                error={!!errors.email && touched.email} hiddenLabel
                             />
+
                             {touched.email && errors.email && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.email}</Typography>}
                         </Box>
                         <Box mb={1.8}>
-                            <Typography variant='body1' sx={{ marginBottom: '0.3rem' }}>Password</Typography>
-                            <TextField
+                            <InputField label="Password" placeholder="Please input your password!" id="password"
                                 fullWidth
-                                hiddenLabel
-                                id="password"
                                 type="password"
-                                placeholder="Please input your password!"
                                 name="password"
-                                variant="standard"
-                                size="small"
                                 value={values.password}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
@@ -80,9 +69,9 @@ const SignInForm = () => {
                             />
                             {touched.password && errors.password && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.password}</Typography>}
 
-                            <Box sx={{textAlign: 'right'}}>
-                            <Typography component="span" className="link">Forget Password?</Typography>
-                        </Box>
+                            <Box sx={{ textAlign: 'right' }}>
+                                <Typography component="span" className="link">Forget Password?</Typography>
+                            </Box>
                         </Box>
 
                         <Button variant="rounded" color="primary" type="submit" fullWidth>Sign in</Button>
