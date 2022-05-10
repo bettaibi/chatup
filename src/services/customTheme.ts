@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material";
-import { palette } from "@mui/system";
 
 export const theme = createTheme({
     palette: {
@@ -14,6 +13,22 @@ export const theme = createTheme({
         }
     },
     components: {
+        MuiInputLabel: {
+           styleOverrides: {
+            filled: {
+                position: 'absolute',
+                top: '0'
+            }
+           }
+        },
+        MuiInputBase: {
+            styleOverrides: {
+                input: {
+                  backgroundColor: '#f8fafc',
+                 
+                },
+            }
+        },
         MuiButton: {
             variants: [
                 {
