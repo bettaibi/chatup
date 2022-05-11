@@ -11,7 +11,10 @@
     backdrop-filter: blur(5px);
     min-width: 280px;
 }
-
+.page__wrapper{
+    flex: 1;
+    background-color: #fff;
+}
 .b__radius{
     border-radius: 18px;
 }
@@ -40,11 +43,20 @@ span.link{
     // background-color: #f8fafc;
 }
 
-// .sm__container{
-//     @media (max-width: 576px){
-//         width: 100%;
-//     }
-//     width: 540px;
-//     padding: 1rem;
-//     margin: 0 auto;
-// }
+a.navigation__link{
+    color: #1da57a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(0,0%,100%,.4);
+    height: 38px;
+    width: 45px;
+    font-size: 22px;
+    border-radius: 80px;
+    transition: background-color .4s,box-shadow .4s;
+    cursor: pointer;
+}
+a.active {
+    background-color: #fafafa;
+    @extend .shadow__sm;
+}
