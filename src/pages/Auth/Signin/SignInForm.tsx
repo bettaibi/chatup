@@ -9,6 +9,7 @@ import {
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import InputField from '../../../components/InputField';
+import ForgetPassword from '../ForgetPassword';
 
 interface SignInModel {
     email: string;
@@ -70,7 +71,7 @@ const SignInForm = () => {
                             {touched.password && errors.password && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.password}</Typography>}
 
                             <Box sx={{ textAlign: 'right' }}>
-                                <Typography component="span" className="link">Forget Password?</Typography>
+                                <ForgetPassword />
                             </Box>
                         </Box>
 
