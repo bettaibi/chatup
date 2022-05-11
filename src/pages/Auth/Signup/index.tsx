@@ -2,11 +2,7 @@ import React from 'react';
 import {
   Box,
   Typography,
-  Divider,
-  Stack,
-  Button,
   Container,
-  TextField,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import SignupForm from './SignupForm';
@@ -19,7 +15,7 @@ const Signup = () => {
         <Box className="glass__blur b__radius" p={2} width="100%">
           <Box mb={2}>
             <img src="/chatup/img/58.png" alt="chatup_logo" />
-            <Typography variant="h5" sx={{ fontWeight: 600 }}>Sign up</Typography>
+            <Typography variant="h5" sx={{ fontWeight: 600 }} gutterBottom>Sign up</Typography>
 
             <Typography variant="body1" sx={{ display: 'inline-block' }}>
               Don't have an account? &nbsp;

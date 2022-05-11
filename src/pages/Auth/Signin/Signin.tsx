@@ -20,7 +20,7 @@ const Signin: React.FC = () => {
           
           <Box mb={2}>
             <img src="/chatup/img/58.png" alt="chatup_logo" />
-            <Typography variant="h5" sx={{ fontWeight: 600 }}>Sign in</Typography>
+            <Typography variant="h5" sx={{ fontWeight: 600 }} gutterBottom>Sign in</Typography>
 
             <Typography variant="body1" sx={{ display: 'inline-block' }}>
               Don't have an account? &nbsp;

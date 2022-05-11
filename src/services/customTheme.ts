@@ -13,20 +13,22 @@ export const theme = createTheme({
         }
     },
     components: {
-        MuiInputLabel: {
-           styleOverrides: {
-            filled: {
-                position: 'absolute',
-                top: '0'
-            }
-           }
-        },
         MuiInputBase: {
             styleOverrides: {
                 input: {
                   backgroundColor: '#f8fafc',
                  
                 },
+            }
+        },
+        MuiDialog: {
+            styleOverrides: {
+                paper: {
+                    borderRadius: '18px'
+                },
+                paperFullScreen: {
+                    borderRadius: '0px'
+                }
             }
         },
         MuiButton: {
