@@ -1,0 +1,40 @@
+.sidebar__wrapper {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden !important;
+}
+
+.draggable{
+    position: fixed;
+    right: 0;
+    background: transparent;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem 1rem 0;
+    overflow: hidden;
+    z-index: 999999;
+    .handler__container{
+        height: 180px;
+        background-color: transparent;
+        width: 30px;
+        display: flex;
+        justify-content: flex-end;
+        touch-action: none;
+        cursor: grab;
+        .handler{
+            height: 100%;
+            width: 10px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            background: rgba(255,255,255, .6);
+            backdrop-filter: blur(5px);
+        }
+    }
+}

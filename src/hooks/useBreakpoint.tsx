@@ -28,9 +28,9 @@ function useBreakpoint() {
 
         switch (true) {
             case (width < 576): return "xs";
-            case (width >= 576 && width <= 768): return "sm";
-            case (width > 768 && width <= 992) : return "md";
-            case (width > 992): return "lg";
+            case (width >= 576 && width < 768): return "sm";
+            case (width >= 768 && width < 992) : return "md";
+            case (width >= 992): return "lg";
             default: return '';
         }
     }

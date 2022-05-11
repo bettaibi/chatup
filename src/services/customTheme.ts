@@ -12,6 +12,15 @@ export const theme = createTheme({
             main: '#1DA57A'
         }
     },
+    breakpoints: {
+        values: {
+          xs: 0,
+          sm: 768,
+          md: 992,
+          lg: 1200,
+          xl: 1536,
+        },
+    },
     components: {
         MuiInputBase: {
             styleOverrides: {
