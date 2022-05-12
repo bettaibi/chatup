@@ -35,9 +35,7 @@ span.link{
 .shadow__sm {
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
 }
-.bg__white{
-    background-color: #fff;
-}
+
 .bg__lighten__green{
     background-color: #f0fdf4;
     // background-color: #f8fafc;
@@ -55,8 +53,17 @@ a.navigation__link{
     border-radius: 80px;
     transition: background-color .4s,box-shadow .4s;
     cursor: pointer;
+    @media (max-width: 768px) {
+        background-color: #DBDBDB;
+    }
+    &.active {
+        background-color: #fafafa;
+        @extend .shadow__sm;
+    }
+    &[data-type="sign_out"]{
+        color: #fff; 
+        background-color: #1DA57A;
+        margin-bottom: 0.3rem;
+    }
 }
-a.active {
-    background-color: #fafafa;
-    @extend .shadow__sm;
-}
+

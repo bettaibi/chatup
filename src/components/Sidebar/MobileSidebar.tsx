@@ -98,7 +98,7 @@ const MobileSidebar = ({isMobile}: {isMobile: boolean}) => {
 
          <Box>
             <Box className="glass__blur b__radius" p={2}
-            sx={{width: '100%', minWidth: '100%',  maxHeight: '95%', height: 'auto'}} >
+            sx={{width: '100%', minWidth: '100%',  maxHeight: '95vh', height: 'auto', overflow: 'auto'}} >
                 <Navigations isMobile = {isMobile} closeHandler = {closeHandler} />
             </Box>
          </Box>
