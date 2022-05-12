@@ -2,10 +2,6 @@ import React, {useContext} from 'react';
 import { AlertColor } from '@mui/material';
 import { Subject } from '../../services/Subject';
 
-enum SnackbarEvent{
-    SNACKBAR_DISPATCHER = 'SNACKBAR_DISPATCHER'
-}
-
 export interface SnackBarPayloadProps{
     msg: string;
     severity: AlertColor;
@@ -13,16 +9,16 @@ export interface SnackBarPayloadProps{
 
 interface SnackBarProviderProps{
     showMsg: (msg: string, severity: AlertColor) => void;
-    subject: Subject<SnackBarPayloadProps>;
+    snackbarSubject: Subject<SnackBarPayloadProps>;
 }
 
 const SnackbarContext = React.createContext<SnackBarProviderProps>({} as SnackBarProviderProps);
 
 const SnackBarProvider = ({children}: {children: React.ReactNode}) => {
-    const subject = new Subject<SnackBarPayloadProps>();
+    const snackbarSubject = new Subject<SnackBarPayloadProps>();
 
     function showMsg(msg: string, severity: AlertColor) {
-        subject.next(SnackbarEvent.SNACKBAR_DISPATCHER, {
+        snackbarSubject.next({
             msg,
             severity
         });
@@ -30,7 +26,7 @@ const SnackBarProvider = ({children}: {children: React.ReactNode}) => {
 
     const value = {
         showMsg,
-        subject
+        snackbarSubject
     }
     return (
         <SnackbarContext.Provider value={value}>
@@ -44,4 +40,4 @@ const useSnackbar = () => {
     return value;
 }
 
-export {SnackBarProvider, useSnackbar, SnackbarEvent };
+export {SnackBarProvider, useSnackbar };

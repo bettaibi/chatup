@@ -7,6 +7,7 @@ const Chat = () => {
   return (
     <div>
       <button onClick={()=> showMsg('this is my message', 'error')}>show snackbar</button>
+      <button onClick={()=> showMsg('another message', 'success')}>show snackbar</button>
     </div>
   )
 }

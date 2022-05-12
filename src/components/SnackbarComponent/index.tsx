@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import useToggle from '../../hooks/useToggle';
-import { useSnackbar, SnackbarEvent, SnackBarPayloadProps } from '../../context/SnackBarProvider';
+import { useSnackbar, SnackBarPayloadProps } from '../../context/SnackBarProvider';
+import { Subscription } from '../../services/Subject';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
@@ -16,36 +17,37 @@ let snackbarPalyload = {
     severity: 'success'
 } as SnackBarPayloadProps;
 
-let isSubscribed = false;
+let subscription: Subscription | undefined;
 
 const SnackbarComponent = () => {
     const { show, handleClose, handleOpen } = useToggle();
-    const { subject } = useSnackbar();
+    const { snackbarSubject } = useSnackbar();
 
     useEffect(() => {
         subscribe();
 
         return () => {
-            subject.unsubscribe(SnackbarEvent.SNACKBAR_DISPATCHER);
-            isSubscribed = false;
+            if (subscription) {
+                subscription.unsubscribe();
+                subscription = undefined;
+            }
         }
     }, []);
 
     function subscribe() {
         try {
-            if (isSubscribed) return;
-            isSubscribed = true;
-            subject.subscribe(SnackbarEvent.SNACKBAR_DISPATCHER, (obj) => {
-                if (obj) {
-                    snackbarPalyload = { ...obj };
-                    handleOpen();
-                }
-            });
+            if (subscription) return;
+            subscription = snackbarSubject.subscribe(openSnackbar)
         }
         catch (err) {
             console.error(err);
         }
     }
+
+    const openSnackbar = useCallback((obj) => {
+        snackbarPalyload = { ...obj };
+        handleOpen();
+    }, [])
 
     return (
         <Snackbar
