@@ -21,7 +21,7 @@ class Subject<T>{
 
     subscribe(fn: (payload?: T) => void): Subscription{
        this.observers.push(fn)
-       console.log(this.observers)
+
        return {
         unsubscribe : () => {
             this.observers = this.observers.filter((func: ()=> void) => {
