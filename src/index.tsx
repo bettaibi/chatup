@@ -4,6 +4,7 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import App from './App';
 import { ThemeProvider } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
+import {ErrorBoundary} from './components/ErrorBoundary';
 import {theme} from './services/customTheme';
 
 import './index.scss';
@@ -14,7 +15,9 @@ rootNode.render(
   <React.StrictMode>
     <CssBaseline />
     <ThemeProvider theme={theme}>
-    <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
     </ThemeProvider>
   </React.StrictMode>
 );

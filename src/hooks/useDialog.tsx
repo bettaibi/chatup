@@ -4,8 +4,7 @@ import {
     Dialog,
     DialogActions,
     DialogContent,
-    DialogTitle,
-    Typography
+    DialogTitle
 } from '@mui/material';
 import Slide from '@mui/material/Slide';
 import Fade from '@mui/material/Fade';
@@ -19,6 +18,7 @@ const SlideTransition = forwardRef(function Transition(
 ) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
+
 const FadeTransition = forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>;
