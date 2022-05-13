@@ -1,21 +1,32 @@
 import React from 'react';
-import { TextFieldProps, TextField } from '@mui/material';
+import { InputProps, Typography } from '@mui/material';
+import InputBase from '@mui/material/InputBase';
 
 
-const InputField: React.FC<TextFieldProps> = (props) => {
+interface InputExtendedProps {
+  label?: string;
+}
+
+const InputField: React.FC<InputProps & InputExtendedProps> = (props) => {
+  const {label, error} = props;
+  const color = error? 'error': 'secondary';
 
   return (
-    <TextField
-      variant='standard'
-      InputLabelProps={{shrink: true}}
-      size="small"
-      InputProps={{style: {
-        backgroundColor: 'transparent',
-       
+
+    <React.Fragment>
+      {label &&
+        <Typography component="span" color={color}
+        sx={{marginBottom:'0.3rem', display: 'block'}}>
+          {label}
+        </Typography>
       }
-      }}
-      {...props}
-   />
+
+      <InputBase
+        fullWidth
+        {...props}
+      />
+    </React.Fragment>
+
   )
 }
 

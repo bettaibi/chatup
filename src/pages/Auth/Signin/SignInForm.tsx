@@ -53,13 +53,13 @@ const SignInForm = () => {
                                 value={values.email}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                error={!!errors.email && touched.email} hiddenLabel
+                                error={!!errors.email && touched.email}
                             />
 
                             {touched.email && errors.email && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.email}</Typography>}
                         </Box>
                         <Box mb={1.8}>
-                            <InputField label="Password" placeholder="Please input your password!" id="password"
+                            <InputField placeholder="Please input your password!" id="password"
                                 fullWidth
                                 type="password"
                                 name="password"

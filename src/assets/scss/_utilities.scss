@@ -1,0 +1,122 @@
+// #0f172a, #94a0b1
+
+.bg__gradient {
+    min-height: 100vh;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, #96fffc, #d680f0, #dda8ed, #f5a7f5, rgb(255, 213, 136));
+}
+
+.glass__blur {
+    background: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(5px);
+    min-width: 280px;
+}
+
+.page__wrapper {
+    flex: 1;
+    background-color: #fff;
+    overflow: hidden;
+    min-height: 100%;
+}
+
+.b__radius {
+    border-radius: 18px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.link,
+span.link {
+    font-size: .8125rem !important;
+
+    &:hover {
+        text-decoration: underline;
+        color: #1DA57A;
+    }
+}
+
+span.link {
+    cursor: pointer;
+}
+
+.shadow__sm {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+}
+
+a.navigation__link {
+    color: #1da57a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(0, 0%, 100%, .4);
+    height: 38px;
+    width: 45px;
+    font-size: 22px;
+    border-radius: 80px;
+    transition: background-color .4s, box-shadow .4s;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+        background-color: #DBDBDB;
+    }
+
+    &.active {
+        background-color: #fafafa;
+        @extend .shadow__sm;
+    }
+
+    &[data-type="sign_out"] {
+        color: #fff;
+        background-color: #1DA57A;
+        margin-bottom: 0.3rem;
+    }
+}
+
+.bg__cover {
+    height: 192px;
+    width: 100%;
+    background-size: cover;
+}
+
+.spacing {
+    &.p {
+        padding: 48px;
+    }
+
+    &.px {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    &.py {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    @media (max-width: 768px) {
+        &.p {
+            padding: 24px;
+        }
+
+        &.px {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        &.py {
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+    }
+}
+
+.scrolled{
+    overflow: auto;
+    height: calc(100vh - 2rem);
+    @media (max-width: 768px) {
+        height: 100vh;
+    }
+
+}
