@@ -72,7 +72,7 @@ const SignupForm = () => {
                                             value={values.username}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
-                                            error={!!errors.username && touched.username} hiddenLabel
+                                            error={!!errors.username && touched.username}
                                         />
 
                                         {touched.username && errors.username && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.username}</Typography>}
@@ -86,7 +86,7 @@ const SignupForm = () => {
                                             value={values.email}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
-                                            error={!!errors.email && touched.email} hiddenLabel
+                                            error={!!errors.email && touched.email}
                                         />
 
                                         {touched.email && errors.email && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.email}</Typography>}
@@ -100,7 +100,7 @@ const SignupForm = () => {
                                             value={values.phone}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
-                                            error={!!errors.phone && touched.phone} hiddenLabel
+                                            error={!!errors.phone && touched.phone}
                                         />
 
                                         {touched.phone && errors.phone && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.phone}</Typography>}
@@ -117,7 +117,7 @@ const SignupForm = () => {
                                             value={values.password}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
-                                            error={!!errors.password && touched.password} hiddenLabel
+                                            error={!!errors.password && touched.password}
                                         />
 
                                         {touched.password && errors.password && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.password}</Typography>}
@@ -131,7 +131,7 @@ const SignupForm = () => {
                                             value={values.confirmPassword}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
-                                            error={!!errors.confirmPassword && touched.confirmPassword} hiddenLabel
+                                            error={!!errors.confirmPassword && touched.confirmPassword}
                                         />
 
                                         {touched.confirmPassword && errors.confirmPassword && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.confirmPassword}</Typography>}

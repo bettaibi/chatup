@@ -38,7 +38,7 @@ const ForgetPasswordForm = ({handleClose}: {handleClose: () => void}) => {
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    error={!!errors.email && touched.email} hiddenLabel
+                    error={!!errors.email && touched.email}
                 />
 
                 {touched.email && errors.email && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.email}</Typography>}

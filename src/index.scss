@@ -4,9 +4,10 @@
 
 body{
     font-family: "Raleway", "Roboto","Helvetica","Arial",sans-serif !important;
+    color: #1e293b !important;
     overflow: hidden;
 }
 
 /* CSS DEPENDENCIES */
 @import 'simplebar/dist/simplebar.min.css';
-@import './styles/utilities';
+@import './assets/scss/utilities';
