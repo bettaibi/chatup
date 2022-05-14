@@ -12,7 +12,9 @@ const Signup = () => {
   return (
     <Box className="bg__gradient">
       <Container maxWidth="sm" sx={{ display: 'grid', alignContent: 'center', height: '100vh' }}>
-        <Box className="glass__blur b__radius" p={2} width="100%">
+        <Box className="glass__blur b__radius" p="1.5rem" width="100%"
+        sx={{maxHeight:'95vh', overflowY: 'auto', height: 'auto'}}>
+          
           <Box mb={2}>
             <img src="/chatup/img/58.png" alt="chatup_logo" />
             <Typography variant="h5" sx={{ fontWeight: 600 }} gutterBottom>Sign up</Typography>

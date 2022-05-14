@@ -10,7 +10,7 @@ import {
 import { Header, UserDetails } from '../../../components/UserProfile';
 
 const Profile = () => {
-    const [isEdited, setIsEdited] = React.useState(false);
+    const [isEdited, setIsEdited] = React.useState<boolean>(false);
 
     function handleChange(){
         setIsEdited(prev => !prev);

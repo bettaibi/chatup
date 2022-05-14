@@ -31,10 +31,11 @@ const ForgetPasswordForm = ({handleClose}: {handleClose: () => void}) => {
     return (
         <Form onSubmit={handleSubmit}>
             <Box mb={1.8}>
-                <InputField placeholder="Please input your E-mail!" id="email"
+                <InputField placeholder="Please input your E-mail!"
                     fullWidth
                     type="email"
                     name="email"
+                    label="Email*"
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}

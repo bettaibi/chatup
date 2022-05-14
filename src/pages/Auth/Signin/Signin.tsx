@@ -16,7 +16,7 @@ const Signin: React.FC = () => {
   return (
     <Box className="bg__gradient">
       <Container maxWidth="sm" sx={{ display: 'grid', alignContent: 'center', height: '100vh' }}>
-        <Box className="glass__blur b__radius" p={2} width="100%">
+        <Box className="glass__blur b__radius" p="1.5rem" width="100%">
           
           <Box mb={2}>
             <img src="/chatup/img/58.png" alt="chatup_logo" />
@@ -35,7 +35,7 @@ const Signin: React.FC = () => {
           {/* Sign in Form */}
           <SignInForm />
 
-          <Box my={2}>
+          <Box my="2rem">
             <Divider>
               <Typography>
                 Or continue with

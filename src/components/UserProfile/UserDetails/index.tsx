@@ -25,7 +25,7 @@ const UserDetails = ({isEdited}: {isEdited: boolean}) => {
 const Details = () => {
 
     return(
-        <Box className="spacing px" pt="1.2rem">
+        <Box className="spacing px" pt="1.2rem" data-testid="userDetailsContainer">
             <Box sx={{display: 'flex', flexDirection:'row', marginBottom: '1rem', 
             alignItems: 'center', gap:'1.2rem'}}>
                 <EmailOutlined color="secondary" sx={{alignSelf: 'flex-start'}} />
