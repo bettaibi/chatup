@@ -9,8 +9,9 @@ import {
 import { CameraAltOutlined, DeleteOutline } from '@mui/icons-material';
 import cover from "../../../assets/img/cover.jpg";
 import avatar from "../../../assets/img/avatar.jpg";
+import AvatarCropper from './AvatarCropper';
 
-const Header = ({ actionsBtn, isEdited }: { actionsBtn?: React.ReactNode, isEdited: boolean }) => {
+const Header = ({ actionsBtn, isEdited = false }: { actionsBtn?: React.ReactNode, isEdited: boolean }) => {
     return (
         <React.Fragment>
             <Box className="bg__cover" sx={{ backgroundImage: `url(${cover})` }} />
@@ -22,7 +23,7 @@ const Header = ({ actionsBtn, isEdited }: { actionsBtn?: React.ReactNode, isEdit
                     {/* AVATAR */}
                     {
                         isEdited ? <EditedAvatar /> : <Avatar
-                            alt="user avatar"
+                            alt="user_avatar"
                             src={avatar}
                             sx={{ width: '128px', height: '128px', border: '4px solid #fff' }}
                         />
@@ -49,7 +50,7 @@ const EditedAvatar = () => {
             overflow: 'hidden', borderRadius: '50%', position: 'relative'
         }}>
             <Avatar
-                alt="user avatar"
+                alt="avatar_to_edit"
                 src={avatar}
                 sx={{ width: '100%', height: '100%' }}
             />
@@ -58,9 +59,8 @@ const EditedAvatar = () => {
                 top: 0, left: 0, backgroundColor: 'rgba(0,0,0,.5)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}>
-                <IconButton aria-label="delete" sx={{ color: '#fff' }}>
-                    <CameraAltOutlined />
-                </IconButton>
+                <AvatarCropper />
+                
                 <IconButton aria-label="delete" sx={{ color: '#fff' }}>
                     <DeleteOutline />
                 </IconButton>

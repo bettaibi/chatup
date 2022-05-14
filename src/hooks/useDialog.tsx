@@ -44,7 +44,7 @@ const useDialog = () => {
                 {title}
             </DialogTitle>}
 
-            <DialogContent dividers={dividers}>
+            <DialogContent dividers={dividers} sx={{padding: "0 !important"}}>
                 {children}
             </DialogContent>
 

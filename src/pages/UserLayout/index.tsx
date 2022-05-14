@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import {
     Box,
 
@@ -33,6 +33,10 @@ const UserLayout = () => {
                             <Route path="/notifications" element={<Notifications />} />
                             <Route path="/shorts" element={<Shorts />} />
                             <Route path="/calls" element={<Calls />} />
+                            <Route
+                                path="*"
+                                element={<Navigate to="/chatup" replace />}
+                            />
                         </Routes>
                     </Suspense>
                 </Box>

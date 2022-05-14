@@ -15,7 +15,7 @@ import {
     LocationCityOutlined,
     PublicOutlined,
     DescriptionOutlined,
-    AccountCircle,
+    AccountCircleRounded,
 } from '@mui/icons-material';
 import InputField from '../../InputField';
 import Footer from '../../Footer';
@@ -41,12 +41,13 @@ const UserForm = () => {
         handleSubmit,
         errors,
         touched,
-        values
+        values,
+        isValid
     } = useFormik({
         validationSchema: schema,
         initialValues,
         onSubmit: (values) => {
-            console.log(values)
+            onhandleSubmit(values)
         }
     });
 
@@ -56,7 +57,7 @@ const UserForm = () => {
 
     return (
         <form onSubmit={handleSubmit} autoComplete='off'>
-            <Box className="spacing px" pt="1.2rem">
+            <Box className="spacing px" pt="1.2rem" data-testid="user_form">
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>
                         <InputField placeholder="Please input your Username!" id="username"
@@ -70,12 +71,12 @@ const UserForm = () => {
                             error={!!errors.username && touched.username}
                             startAdornment={
                                 <InputAdornment position="start">
-                                    <AccountCircle />
+                                    <AccountCircleRounded />
                                 </InputAdornment>
                             }
                         />
 
-                        {touched.username && errors.username && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.username}</Typography>}
+                        {touched.username && errors.username && <Typography variant='body2' sx={{ color: "error.main" }} data-testid="username">{errors.username}</Typography>}
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <InputField placeholder="Please input your phone!" id="phone"
@@ -94,7 +95,7 @@ const UserForm = () => {
                             }
                         />
 
-                        {touched.phone && errors.phone && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.phone}</Typography>}
+                        {touched.phone && errors.phone && <Typography variant='body2' sx={{ color: "error.main" }} data-testid="phone">{errors.phone}</Typography>}
                     </Grid>
                 </Grid>
 

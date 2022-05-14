@@ -2,12 +2,11 @@ import React from 'react';
 import {
     Box,
     Typography,
-    Divider,
-    Stack,
     Button,
+    InputAdornment,
 } from '@mui/material';
-import OverrideStepper from '../../../components/OverrideStepper';
 import { Formik, Form } from "formik";
+import OverrideStepper from '../../../components/OverrideStepper';
 import * as yup from 'yup';
 import InputField from '../../../components/InputField';
 
@@ -64,11 +63,12 @@ const SignupForm = () => {
 
                                 {/* Step 1 */}
                                 <React.Fragment>
-                                    <Box my={1.8}>
-                                        <InputField placeholder="Please input your Username!" id="username"
+                                    <Box my={1.2}>
+                                        <InputField placeholder="Please input your Username!" size="small"
                                             fullWidth
                                             type="text"
                                             name="username"
+                                            label = "Username*"
                                             value={values.username}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -78,11 +78,12 @@ const SignupForm = () => {
                                         {touched.username && errors.username && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.username}</Typography>}
                                     </Box>
 
-                                    <Box mb={1.8}>
-                                        <InputField placeholder="Please input your E-mail!" id="email"
+                                    <Box mb={1.2}>
+                                        <InputField placeholder="Please input your E-mail!" size="small"
                                             fullWidth
                                             type="email"
                                             name="email"
+                                            label = "Email*"
                                             value={values.email}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -93,10 +94,11 @@ const SignupForm = () => {
                                     </Box>
 
                                     <Box>
-                                        <InputField placeholder="Please input your phone number!" id="phone"
+                                        <InputField placeholder="Please input your phone number!" size="small"
                                             fullWidth
                                             type="phone"
                                             name="phone"
+                                            label = "Phone*"
                                             value={values.phone}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -109,11 +111,12 @@ const SignupForm = () => {
 
                                 {/* Step 2 */}
                                 <React.Fragment>
-                                    <Box my={1.8}>
-                                        <InputField placeholder="Please input your password!" id="password"
+                                    <Box my={1.2}>
+                                        <InputField placeholder="Please input your password!" size="small"
                                             fullWidth
                                             type="password"
                                             name="password"
+                                            label = "Password*"
                                             value={values.password}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -124,10 +127,11 @@ const SignupForm = () => {
                                     </Box>
 
                                     <Box>
-                                        <InputField placeholder="Please cpnfirm your password" id="confirmPassword"
+                                        <InputField placeholder="Please confirm your password" size="small"
                                             fullWidth
                                             type="password"
                                             name="confirmPassword"
+                                            label = "Confirm Password*"
                                             value={values.confirmPassword}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -155,8 +159,6 @@ const SignupForm = () => {
                 }
 
             </Formik>
-
-
 
         </React.Fragment>
     )

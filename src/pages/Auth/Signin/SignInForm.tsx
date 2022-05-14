@@ -2,14 +2,14 @@ import React from 'react';
 
 import {
     Box,
-    TextField,
     Typography,
     Button
 } from '@mui/material';
 import { Formik, Form } from 'formik';
-import * as Yup from 'yup';
 import InputField from '../../../components/InputField';
 import ForgetPassword from '../ForgetPassword';
+
+import * as Yup from 'yup';
 
 interface SignInModel {
     email: string;
@@ -45,11 +45,12 @@ const SignInForm = () => {
                         noValidate
                         autoComplete='off'
                     >
-                        <Box mb={1.8}>
-                            <InputField placeholder="Please input your E-mail!" id="email"
+                        <Box mb={2}>
+                            <InputField placeholder="Please input your E-mail!" size="small"
                                 fullWidth
                                 type="email"
                                 name="email"
+                                label="Email*"
                                 value={values.email}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
@@ -58,11 +59,12 @@ const SignInForm = () => {
 
                             {touched.email && errors.email && <Typography variant='body2' sx={{ color: "error.main" }}>{errors.email}</Typography>}
                         </Box>
-                        <Box mb={1.8}>
-                            <InputField placeholder="Please input your password!" id="password"
+                        <Box mb={2}>
+                            <InputField placeholder="Please input your password!" size="small"
                                 fullWidth
                                 type="password"
                                 name="password"
+                                label="Password*"
                                 value={values.password}
                                 onChange={handleChange}
                                 onBlur={handleBlur}

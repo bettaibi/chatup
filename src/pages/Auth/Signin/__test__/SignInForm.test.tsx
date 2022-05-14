@@ -35,8 +35,8 @@ describe('test signin component', () => {
 
     it('form should submit data properly', async() => {
         render(<SignInForm />)
-        const emailElem: any = screen.getByPlaceholderText(/Please input your E-mail!/i);
-        const passElem: any =  screen.getByPlaceholderText(/Please input your password!/i);
+        const emailElem: any = await screen.findByPlaceholderText(/Please input your E-mail!/i);
+        const passElem: any =  await screen.findByPlaceholderText(/Please input your password!/i);
         const submitBtnElem: any = screen.getByRole('button', {name: /sign in/i});
 
         fireEvent.change(emailElem, {target: {value: 'example@gmail.com'}});
