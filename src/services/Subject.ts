@@ -13,7 +13,7 @@ class Subject<T>{
         this.observers = [];
     }
 
-    next(payload: T){
+    next(payload?: T){
       for(let fn of this.observers){
           fn(payload);
       }

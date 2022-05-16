@@ -4,10 +4,16 @@ import {
     WhatsappOutlined,
     NotificationsOutlined,
     SettingsOutlined,
-    VideoStableOutlined
+    PersonSearchOutlined
 } from '@mui/icons-material';
 
 export const navigation = [
+    {
+        icon: <PersonSearchOutlined fontSize='inherit' />,
+        title: 'Search',
+        path: '/chatup/Search',
+        route: 'Search'
+    },
     {
         icon: <PersonOutlined fontSize='inherit'/>,
         title: 'My Profile',
@@ -25,12 +31,6 @@ export const navigation = [
         title: 'Calls History',
         path: '/chatup/calls',
         route: 'calls'
-    },
-    {
-        icon: <VideoStableOutlined fontSize='inherit' />,
-        title: 'Shorts',
-        path: '/chatup/shorts',
-        route: 'shorts'
     },
     {
         icon: <NotificationsOutlined fontSize='inherit' />,

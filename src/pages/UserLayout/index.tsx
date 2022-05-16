@@ -5,24 +5,28 @@ import {
 
 } from '@mui/material';
 import Sidebar from '../../components/Sidebar';
+import AsideBar from '../../components/AsideBar';
+import {motion} from "framer-motion";
 
-const Shorts = lazy(() => import('./Shorts'));
+const Search = lazy(() => import('./Search'));
 const Settings = lazy(() => import('./Settings'));
 const Chat = lazy(() => import('./Chat'));
 const Notifications = lazy(() => import('./Notifications'));
 const Profile = lazy(() => import('./Profile'));
 const Calls = lazy(() => import('./Calls'));
 
-
 const UserLayout = () => {
 
     return (
         <Box className="bg__gradient"
             sx={{ gap: '1rem', minHeight: '100vh', display: 'flex', flexDirection: 'row', padding: { sm: '1rem' } }} p={0}>
-
+            
+            {/* Sidebar */}
             <Sidebar />
 
-            <Box className="page__wrapper" sx={{ borderRadius: { sm: '18px' } }}>
+            {/* Page Content */}
+            <Box className="page__wrapper" sx={{ borderRadius: { sm: '18px' }, transition: 'width 0.5s' }}
+            component="main">
 
                 <Box className="scrolled">
                     <Suspense fallback={<span>inner loading...</span>}>
@@ -31,7 +35,7 @@ const UserLayout = () => {
                             <Route path="/profile" element={<Profile />} />
                             <Route path="/settings" element={<Settings />} />
                             <Route path="/notifications" element={<Notifications />} />
-                            <Route path="/shorts" element={<Shorts />} />
+                            <Route path="/search" element={<Search />} />
                             <Route path="/calls" element={<Calls />} />
                             <Route
                                 path="*"
@@ -41,6 +45,9 @@ const UserLayout = () => {
                     </Suspense>
                 </Box>
             </Box>
+
+            {/* Aside Bar */}
+            <AsideBar />
         </Box>
     )
 }

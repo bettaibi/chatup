@@ -3,14 +3,15 @@ import { createTheme } from "@mui/material";
 export const theme = createTheme({
     palette: {
         primary: {
-            main: '#1DA57A',
+            main: '#4ab794',
+            light: '#f8fafc'
         },
         secondary: {
             main: '#64748B'
         },
         success: {
             main: '#1DA57A'
-        }
+        },
     },
     breakpoints: {
         values: {
@@ -49,6 +50,10 @@ export const theme = createTheme({
                         borderColor: '#d32f2f',
                         boxShadow: '0 0 0 0.2rem rgb(244 67 54 / 25%)',
                     },
+
+                    "&.rounded": {
+                        borderRadius: '20px',
+                    }
                     
                 },
             }

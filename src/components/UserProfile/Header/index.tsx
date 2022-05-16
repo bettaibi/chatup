@@ -11,7 +11,7 @@ import cover from "../../../assets/img/cover.jpg";
 import avatar from "../../../assets/img/avatar.jpg";
 import AvatarCropper from './AvatarCropper';
 
-const Header = ({ actionsBtn, isEdited = false }: { actionsBtn?: React.ReactNode, isEdited: boolean }) => {
+const Header = ({ actionsBtn, isEdited = false }: { actionsBtn?: React.ReactNode, isEdited?: boolean }) => {
     return (
         <React.Fragment>
             <Box className="bg__cover" sx={{ backgroundImage: `url(${cover})` }} />

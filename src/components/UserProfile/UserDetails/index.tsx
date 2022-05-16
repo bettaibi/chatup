@@ -13,7 +13,7 @@ import {
 } from '@mui/icons-material';
 import UserForm from './UserForm';
 
-const UserDetails = ({isEdited}: {isEdited: boolean}) => {
+const UserDetails = ({isEdited = false}: {isEdited?: boolean}) => {
 
     return (
         <>

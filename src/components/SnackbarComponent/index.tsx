@@ -2,8 +2,9 @@ import React, { useEffect, useCallback } from 'react';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import useToggle from '../../hooks/useToggle';
-import { useSnackbar, SnackBarPayloadProps } from '../../context/SnackBarProvider';
+import { useSnackbar } from '../../context/SubjectProvider';
 import { Subscription } from '../../services/Subject';
+import { SnackBarPayloadProps } from '../../models/subjectContext.model';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
