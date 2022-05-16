@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import SnackbarComponent from './components/SnackbarComponent';
-import { SnackBarProvider } from './context/SnackBarProvider';
+import { SubjectProvider } from './context/SubjectProvider';
 
 // APP ROUTES
 const Signin = lazy(() => import('./pages/Auth/Signin/Signin'));
@@ -16,7 +16,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <SnackBarProvider>
+      <SubjectProvider>
 
         {/* APP ROUTING */}
         <Suspense fallback={<span>Loading...</span>}>
@@ -30,7 +30,7 @@ function App() {
         {/* END APP ROUTING */}
 
         <SnackbarComponent />
-      </SnackBarProvider>
+      </SubjectProvider>
     </BrowserRouter>
   );
 }

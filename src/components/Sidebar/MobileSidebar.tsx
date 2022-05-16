@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
     Box,
-        
+
 } from '@mui/material';
 import { motion, useMotionValue, useAnimation, useTransform } from 'framer-motion';
 
@@ -18,13 +18,13 @@ const spring = {
 };
 
 
-const MobileSidebar = ({isMobile}: {isMobile: boolean}) => {
+const MobileSidebar = ({ isMobile }: { isMobile: boolean }) => {
     const x = useMotionValue(Initial);
     const controls = useAnimation();
     const input = [Initial, 0];
     const opacity = useTransform(x, input, [0, 1]);
-    const zIndex = useTransform(x, input, [-2, 88888]);
-    const backgroundColor = useTransform(x, input, ['#1DA57A', 'rgba(255, 255, 255, 0.6)']);
+    const zIndex = useTransform(x, input, [-2, 99]);
+    const backgroundColor = useTransform(x, input, ['#4ab794', 'rgba(255, 255, 255, 0.6)']);
 
     function panHandler(e: any, pointInfo: any) {
         e.stopPropagation();
@@ -77,35 +77,35 @@ const MobileSidebar = ({isMobile}: {isMobile: boolean}) => {
         }
     }, []);
 
-  return (
-     <React.Fragment>
-     <motion.div className="sidebar__wrapper bg__gradient"
-         style={{ opacity, zIndex }}
-         onTap={() => closeHandler()} />
+    return (
+        <React.Fragment>
+            <motion.div className="sidebar__wrapper bg__gradient"
+                style={{ opacity, zIndex }}
+                onTap={() => closeHandler()} />
 
-     <motion.div className='draggable'
-         style={{ x }}
-         transition={{ spring, duration: 0.5 }}
-         animate={controls}>
+            <motion.div className='draggable'
+                style={{ x }}
+                transition={{ spring, duration: 0.5 }}
+                animate={controls}>
 
-         <motion.div className="handler__container"
-         whileTap={{ scale: 1.12 }}
-         onPan={(e, pointInfo) => panHandler(e, pointInfo)}
-         onPanEnd={(e, pointInfo) => panEndHandler(pointInfo)}>
-             <motion.div className="handler"
-                 style={{ backgroundColor }} />
-         </motion.div>
+                <motion.div className="handler__container"
+                    whileTap={{ scale: 1.12 }}
+                    onPan={(e, pointInfo) => panHandler(e, pointInfo)}
+                    onPanEnd={(e, pointInfo) => panEndHandler(pointInfo)}>
+                    <motion.div className="handler"
+                        style={{ backgroundColor }} />
+                </motion.div>
 
-         <Box>
-            <Box className="glass__blur b__radius" p={2}
-            sx={{width: '100%', minWidth: '100%',  maxHeight: '95vh', height: 'auto', overflow: 'auto'}} >
-                <Navigations isMobile = {isMobile} closeHandler = {closeHandler} />
-            </Box>
-         </Box>
+                <Box>
+                    <Box className="glass__blur b__radius" p={2}
+                        sx={{ width: '100%', minWidth: '100%', maxHeight: '95vh', height: 'auto', overflow: 'auto' }} >
+                        <Navigations isMobile={isMobile} closeHandler={closeHandler} />
+                    </Box>
+                </Box>
 
-     </motion.div>
- </React.Fragment>
-  )
+            </motion.div>
+        </React.Fragment>
+    )
 }
 
 export default MobileSidebar;
