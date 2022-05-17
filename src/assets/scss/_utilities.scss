@@ -126,12 +126,18 @@ a.navigation__link {
     @media (max-width: 768px) {
         height: 100vh;
     }
+    &:hover{
+        &::-webkit-scrollbar{
+            display: initial;
+        }
+    }
 }
 
 ::-webkit-scrollbar {
     background: transparent;
-    height: 8px;
-    width: 8px;
+    height: 6px;
+    width: 6px;
+    display: none;
 }
 
 ::-webkit-scrollbar-thumb {

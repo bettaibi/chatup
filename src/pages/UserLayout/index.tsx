@@ -6,7 +6,6 @@ import {
 } from '@mui/material';
 import Sidebar from '../../components/Sidebar';
 import AsideBar from '../../components/AsideBar';
-import {motion} from "framer-motion";
 
 const Search = lazy(() => import('./Search'));
 const Settings = lazy(() => import('./Settings'));

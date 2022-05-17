@@ -6,7 +6,7 @@ import {
     IconButton,
     Divider
 } from '@mui/material';
-import { CameraAltOutlined, DeleteOutline } from '@mui/icons-material';
+import { DeleteOutline } from '@mui/icons-material';
 import cover from "../../../assets/img/cover.jpg";
 import avatar from "../../../assets/img/avatar.jpg";
 import AvatarCropper from './AvatarCropper';

@@ -40,7 +40,7 @@ const Contact = ({ item, index }: { item: any, index:number }) => {
         <Box>
             <Stack className="spacing px border__bottom" py={.3}
                 sx={{ backgroundColor: 'primary.light', position: 'sticky', top: 54, zIndex: 9,
-                borderTop: index != 0? 0: '1px solid rgba(0,0,0,.12)'}}
+                borderTop: index !== 0? 0: '1px solid rgba(0,0,0,.12)'}}
                 alignItems="center" direction="row">
 
                 <Typography color="secondary" component="span">

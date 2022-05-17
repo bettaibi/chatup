@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { PersonAddAlt } from '@mui/icons-material'
 import { Box, Button, Typography, Tooltip } from '@mui/material'
 import { Header, UserDetails } from '../../../../../components/UserProfile'
